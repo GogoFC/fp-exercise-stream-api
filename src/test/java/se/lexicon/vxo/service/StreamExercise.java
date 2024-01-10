@@ -9,6 +9,7 @@ import java.time.LocalDate;
 import java.time.Period;
 import java.util.*;
 import java.util.function.ToIntFunction;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -67,7 +68,7 @@ public class StreamExercise {
     @Test
     public void task4() {
         int expectedSize = 4988;
-        List<Person> females = null;
+       List<Person> females = people.stream().filter(person -> person.getGender().equals(Gender.FEMALE)).collect(Collectors.toList());
 
         //TODO:Write code here
 
