@@ -9,6 +9,7 @@ import java.time.LocalDate;
 import java.time.Period;
 import java.util.*;
 import java.util.function.ToIntFunction;
+import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -38,9 +39,13 @@ public class StreamExercise {
      */
     @Test
     public void task2() {
-        long amount = 0;
+        //long amount = 0;
+        long amount = people.stream().count();
 
         //TODO:Write code here
+        //Stream<Person> fromPeople = people.stream();
+
+
 
         assertEquals(10000, amount);
     }
