@@ -10,6 +10,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.Period;
 import java.time.chrono.ChronoLocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.function.ToIntFunction;
 import java.util.stream.Collectors;
@@ -192,9 +193,15 @@ public class StreamExercise {
         String expected = "WEDNESDAY 19 DECEMBER 2012";
         int personId = 5914;
 
-        Optional<String> optional = ;
+        //Optional<String> optional = ;
 
-        Optional<String> optional1 = ;
+        Optional<String> optional = people.stream()
+                .filter(person -> person.getPersonId() == 5914)
+                        .map(Person::getDateOfBirth)
+                .map(localDate -> localDate.format(DateTimeFormatter.ofPattern("eeee d MMMM y")).toUpperCase())
+                                .findFirst();
+
+
 
         assertNotNull(optional);
         assertTrue(optional.isPresent());
