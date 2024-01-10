@@ -31,7 +31,6 @@ public class StreamExercise {
         List<Integer> integers = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
         integers.forEach(System.out::println);
 
-        //TODO:Write code here
 
     }
 
@@ -43,10 +42,7 @@ public class StreamExercise {
         //long amount = 0;
         long amount = people.stream().count();
 
-        //TODO:Write code here
         //Stream<Person> fromPeople = people.stream();
-
-
 
         assertEquals(10000, amount);
     }
@@ -56,10 +52,11 @@ public class StreamExercise {
      */
     @Test
     public void task3() {
-        long amount = 0;
+        //long amount = 0;
         int expected = 90;
 
-        //TODO:Write code here
+        long amount = people.stream()
+                        .filter(person -> person.getLastName().equals("Andersson")).count();
 
         assertEquals(expected, amount);
     }
