@@ -193,13 +193,11 @@ public class StreamExercise {
         String expected = "WEDNESDAY 19 DECEMBER 2012";
         int personId = 5914;
 
-        //Optional<String> optional = ;
-
         Optional<String> optional = people.stream()
                 .filter(person -> person.getPersonId() == 5914)
-                        .map(Person::getDateOfBirth)
+                .map(Person::getDateOfBirth)
                 .map(localDate -> localDate.format(DateTimeFormatter.ofPattern("eeee d MMMM y")).toUpperCase())
-                                .findFirst();
+                .findFirst();
 
 
 
